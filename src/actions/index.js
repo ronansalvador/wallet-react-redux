@@ -1,6 +1,8 @@
 // Coloque aqui suas actions
 export const ADD_USER = 'ADD_USER';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
+export const GET_EXPENSE = 'GET_EXPENSE';
+export const CURRENT_QUOTE = 'CURRENT_QUOTE';
 
 export const addUserAction = (email) => ({
   type: ADD_USER,
@@ -19,17 +21,25 @@ export const getCurrencies = (currencies) => ({
   currencies,
 });
 
-export const getcurrenciesThunk = () => {
-  console.log('Redux Thunk');
-  return async (dispatch) => {
-    try {
-      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
-      const data = await response.json();
-      const allCurrencies = Object.keys(data);
-      const currencies = allCurrencies.filter((moeda) => moeda !== 'USDT');
-      dispatch(getCurrencies(currencies));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export const getExpenses = (expense) => ({
+  type: GET_EXPENSE,
+  expense,
+});
+
+export const currentQuote = (currencies) => ({
+  type: CURRENT_QUOTE,
+  currencies,
+});
+
+export const getcurrenciesThunk = () => async (dispatch) => {
+  try {
+    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const data = await response.json();
+    const allCurrencies = Object.keys(data);
+    dispatch(currentQuote(data));
+    const currencies = allCurrencies.filter((moeda) => moeda !== 'USDT');
+    dispatch(getCurrencies(currencies));
+  } catch (error) {
+    console.log(error);
+  }
 };
