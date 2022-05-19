@@ -39,20 +39,23 @@ class Table extends Component {
                   <td>{Number(currencyValue).toFixed(2)}</td>
                   <td>{total.toFixed(2)}</td>
                   <td>Real</td>
-                  <button
-                    type="button"
-                    data-testid="edit-btn"
-                  >
-                    Editar
-                  </button>
-                  /
-                  <button
-                    type="button"
-                    data-testid="delete-btn"
-                    onClick={ () => removeExpense(expense.id) }
-                  >
-                    Excluir
-                  </button>
+                  <td>Editar/Excluir</td>
+                  <td>
+                    <button
+                      type="button"
+                      data-testid="edit-btn"
+                    >
+                      Editar
+                    </button>
+                    /
+                    <button
+                      type="button"
+                      data-testid="delete-btn"
+                      onClick={ () => removeExpense(expense.id) }
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>);
             })}
           </tbody>
