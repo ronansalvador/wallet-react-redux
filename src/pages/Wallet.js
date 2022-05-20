@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Table from '../components/Table';
 import { getcurrenciesThunk, getExpenses } from '../actions';
+import styles from './Wallet.module.css';
 
 class Wallet extends React.Component {
   constructor() {
@@ -51,7 +52,7 @@ class Wallet extends React.Component {
     return (
       <div>
         <Header />
-        <form>
+        <form className={ styles.formExpense }>
           <label htmlFor="despesa">
             Valor
             <input

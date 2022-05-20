@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpenses } from '../actions';
+import './Table.css';
 
 class Table extends Component {
   render() {
     const { expenses, removeExpense } = this.props;
     return (
       <div>
-        <table>
+        <table className="tabela">
           <thead>
             <tr>
               <th>Descrição</th>
@@ -39,7 +40,6 @@ class Table extends Component {
                   <td>{Number(currencyValue).toFixed(2)}</td>
                   <td>{total.toFixed(2)}</td>
                   <td>Real</td>
-                  <td>Editar/Excluir</td>
                   <td>
                     <button
                       type="button"

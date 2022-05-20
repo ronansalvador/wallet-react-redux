@@ -1,0 +1,15 @@
+.formExpense {
+  align-items: center;
+  background-color: #022c1d;
+  display: flex;
+  height: 50px;
+  justify-content: space-evenly;
+}
+
+.formExpense label {
+  color: white;
+}
+
+.formExpense input , select {
+  margin-left: 10px;
+}
