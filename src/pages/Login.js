@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addUserAction } from '../actions';
+import './Login.css';
 
 class Login extends Component {
   constructor() {
@@ -41,7 +42,7 @@ class Login extends Component {
     const { checkbutton, email, password } = this.state;
 
     return (
-      <div>
+      <div className="container">
         <form>
           <input
             type="email"
@@ -56,6 +57,7 @@ class Login extends Component {
             data-testid="password-input"
             name="password"
             value={ password }
+            placeholder="Senha"
             onChange={ this.handleLogin }
           />
           <button
