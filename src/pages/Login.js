@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addUserAction } from '../actions';
 import './Login.css';
+import imgwallet from '../image/carteira.png';
 
 class Login extends Component {
   constructor() {
@@ -44,6 +45,7 @@ class Login extends Component {
     return (
       <div className="container">
         <form>
+          <img src={ imgwallet } alt="Carteira" />
           <input
             type="email"
             data-testid="email-input"
