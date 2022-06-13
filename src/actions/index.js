@@ -4,6 +4,8 @@ export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const GET_EXPENSE = 'GET_EXPENSE';
 export const CURRENT_QUOTE = 'CURRENT_QUOTE';
 export const REMOVE_EXPENSES = 'REMOVE_EXPENSES';
+export const EDIT_EXPENSES = 'EDIT_EXPENSES';
+export const EDIT_EXPENSES_FORM = 'EDIT_EXPENSES_FORM';
 
 export const addUserAction = (email) => ({
   type: ADD_USER,
@@ -41,3 +43,13 @@ export const getcurrenciesThunk = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const editExpenses = (expense) => ({
+  type: EDIT_EXPENSES,
+  expense,
+});
+
+export const editExpenciesForm = (expenses) => ({
+  type: EDIT_EXPENSES_FORM,
+  expenses,
+});
